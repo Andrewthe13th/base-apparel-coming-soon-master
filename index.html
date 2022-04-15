@@ -28,11 +28,15 @@
           Hello fellow shoppers! We're currently building our new fashion store.
           Add your email below to stay up-to-date with announcements and our launch deals.
         </p>
-        <form class="input-email">
-          <input type="text" placeholder="Email Address">
-          </input>
-          <button class="btn"></button>
-        </form>
+        <div class="email">
+          <form class="input-email">
+            <input id="email" type="text" placeholder="Email Address">
+            </input>
+            <div style="display: none;" class="warning"><img src="./images/icon-error.svg" alt=""></div>
+            <button class="btn"></button>
+          </form>
+          <p style="display: none;">Please provide a valid email</p>
+        </div>
       </div>
     </div>
   </main>
@@ -45,4 +49,5 @@
     </p>
   </footer>
 </body>
+<script src="js/main.js"></script>
 </html>

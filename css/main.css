@@ -20,6 +20,10 @@ input{border: none;}
   --fw-semibold: 600;
 }
 
+input[type=text]:focus{
+  outline: none; 
+}
+
 main{
   display: grid;
   grid-template-areas: 
@@ -77,15 +81,18 @@ main{
   margin-bottom: 2em;
 }
 
-.description .input-email{
+.input-email:focus-within{
+  outline: 2px solid red;
+}
+
+.description .email{
   margin-bottom: 5em;
 }
 
 .input-email{
   display: flex;
-  justify-content: space-around;
   margin: 0 auto;
-  width: 19em;
+  width: 20em;
   border-radius: 1.5em;
   border: solid 2px var(--clr-primary-desaturated_red_mute);
 }
@@ -96,14 +103,22 @@ main{
   color: var(--clr-primary-desaturated_red_light);
   font-size: 0.8rem;
   margin-left: 1.5em;
+  width: 17em;
+}
+
+.input-email .warning{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: 0.5em;
 }
 
 .input-email button{
-  margin-left: auto;
   width: 4.5em;
   height: 3em;
   border: none;
   border-radius: 500px;
+  margin-left: auto;
   background-color: hsl(0, 80%, 80%);
   background-image: url(../images/icon-arrow.svg);
   background-repeat: no-repeat;
@@ -111,12 +126,18 @@ main{
   box-shadow: hsl(0, 25%, 80%) 0px 5px 15px;
 }
 
+.email p{
+  color: hsl(0, 93%, 68%);
+  margin-top: 0.5rem;
+  margin-left: 1.5em;
+}
+
 @media (min-width: 900px){
   main{
     grid-template-areas: 
     'logo hero-img'
     'description hero-img';
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 70% 30%;
     background-image: url(../images/bg-pattern-desktop.svg);
     background-color: hsl(0, 90%, 99%);
     background-size: contain;
@@ -136,12 +157,13 @@ main{
   .hero-img{
     background-image: url(../images/hero-desktop.jpg);
     height: 100vh;
-    background-size: cover;
+    background-size:cover;
+    background-position: center;
   }
 
   .description{
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
     background: transparent;
     text-align: left;
     margin: 0 auto;
