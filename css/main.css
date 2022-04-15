@@ -1,0 +1,169 @@
+.attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+/* default */
+*,*:before, *:after{box-sizing: border-box;}
+h1,h2,p,span,main,body,body,footer{margin: 0;}
+html,input{font: 16px 'Josefin Sans', sans-serif;}
+img{display: block; width: 100%;}
+input{border: none;}
+
+:root{
+  --clr-primary-bright_red: hsl(0, 93%, 68%);
+  --clr-primary-desaturated_red: hsl(0, 36%, 70%);
+  --clr-primary-desaturated_red_light: hsl(0, 25%, 70%);
+  --clr-primary-desaturated_red_mute: hsl(0, 36%, 90%);
+  --clr-neutral-gray_red: hsl(0, 6%, 24%);
+  --grad-linear-white: linear-gradient(135deg,hsl(0, 0%, 100%),hsl(0, 100%, 98%));
+  --grad-linear-red: linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+}
+
+main{
+  display: grid;
+  grid-template-areas: 
+  'logo'
+  'hero-img'
+  'description';
+}
+
+.logo-container{
+  padding: 1.7em;
+  grid-area: logo;
+}
+
+.logo{
+  width: 6em;
+}
+
+.hero-img{
+  background-image: url('../images/hero-mobile.jpg');
+  width: 100%;
+  height: 14.5em;
+  background-size: cover;
+  grid-area: hero-img;
+}
+
+.description{
+  background-image: var(--grad-linear-white);
+  text-align: center;
+  grid-area: description;
+}
+
+.title{
+}
+
+.description h1{
+  margin: 1.5em 0 0.5em;
+  color: var(--clr-neutral-gray_red);
+  font-size: 2.3rem;
+  letter-spacing: 0.7rem;
+  word-spacing: 100vh;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.description h1 span{
+  color: var(--clr-primary-desaturated_red);
+  font-weight: var(--fw-light);
+}
+
+.description p{
+  color: var(--clr-primary-desaturated_red);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  padding: 0 2.5em;
+  margin-bottom: 2em;
+}
+
+.description .input-email{
+  margin-bottom: 5em;
+}
+
+.input-email{
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 19em;
+  border-radius: 1.5em;
+  border: solid 2px var(--clr-primary-desaturated_red_mute);
+}
+
+.description .input-email input{
+  border-radius: 1em;
+  background-color: transparent;
+  color: var(--clr-primary-desaturated_red_light);
+  font-size: 0.8rem;
+  margin-left: 1.5em;
+}
+
+.input-email button{
+  margin-left: auto;
+  width: 4.5em;
+  height: 3em;
+  border: none;
+  border-radius: 500px;
+  background-color: hsl(0, 80%, 80%);
+  background-image: url(../images/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: hsl(0, 25%, 80%) 0px 5px 15px;
+}
+
+@media (min-width: 900px){
+  main{
+    grid-template-areas: 
+    'logo hero-img'
+    'description hero-img';
+    grid-template-columns: 60% 40%;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-color: hsl(0, 90%, 99%);
+    background-size: contain;
+  }
+
+  .logo-container{
+    width: 22em;
+    margin: auto auto;
+    padding: 0;
+  }
+
+  .logo img{
+    width: 9em;
+    padding: 0;
+  }
+
+  .hero-img{
+    background-image: url(../images/hero-desktop.jpg);
+    height: 100vh;
+    background-size: cover;
+  }
+
+  .description{
+    display: grid;
+    place-content: center;
+    background: transparent;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  .description .title h1{
+    font-size: 3.4rem;
+  }
+
+  .description-container{
+    width: 22em;
+  }
+
+  .description p{
+    padding: 0;
+  }
+  .description form{
+    margin: 0;
+    width: 22em;
+  }
+
+  .input-email button{
+    width: 6em;
+  }
+}
